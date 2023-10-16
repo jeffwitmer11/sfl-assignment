@@ -18,7 +18,7 @@ services:
           MYSQL_PASSWORD: password
     app:
         build: ./src
-        container_name: myapp
+        container_name: app
         platform: linux/x86_64
         command: sh -c "sleep 20s; python3 ./process.py"
         links:
