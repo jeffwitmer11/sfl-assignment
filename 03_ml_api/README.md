@@ -14,8 +14,8 @@ Following on from disclaimer above, the environment requires
 # Usage 
 ## Starting the application
 To run the application on a local server, navigate to the `03_ml_api` directory and run the python file `app.py`.
-Once the script is running, an ip address will be displayed in the terminal (such as http://127.0.0.1:5000). 
-Open a web browser and enter the ip address as a URL
+Once the script is running, an IP address will be displayed in the terminal (such as http://127.0.0.1:5000). 
+Open a web browser and enter the IP address as a URL.
 
 ## Interacting with the chat bot (via the web app)
 Type a prompt to the chat bot in the box and click “GO”
@@ -36,13 +36,13 @@ For example: http://127.0.0.1:5000/api/sessions?id=1
 
 # Deployment
 The model is deployed using a Flask web app and API. <br>
-_NOTE: Prior to the app starting, a SQLite database must be provisioned. This can be done by running the init_db.py script. I have, however, have already provisioned a database with some sample data  and uploaded it to this repository._
+>*NOTE: Prior to the app starting, a SQLite database must be provisioned. This can be done by running the `init_db.py` script. I have, however, have already provisioned a database with some sample data and uploaded it to this repository.*
 
 1. Upon the application start up, the model is either located or downloaded to the server's file system. I am relying on `GPT4All` to initialize the model in this way. <br>
 2. The Flask app is then started. 
 3. The app sets up a home page 
-4. Clicking the “go” button submits a POST method and the app retrieves the user's input from the form. 
-5. It then queries the database for the chat history for this chat session. * Using this chat history, and the newly supplied user input, it prompts the model for a response. 
+4. Clicking the “GO” button submits a POST method and the app retrieves the user's input from the form. 
+5. It then queries the database for the chat history for this chat session. Using this chat history, and the newly supplied user input, it prompts the model for a response. 
 6. The prompt and response are saved to the  database and the chat history (including this new prompt/response) is displayed. 
 7. Clicking the new session button increments the session ID by one and adds a new line to the table in the database with this new session ID. The main page is then refreshed. The current session is determined to be this new session.
 
