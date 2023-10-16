@@ -13,7 +13,7 @@ Following on from disclaimer above, the environment requires
 
 # Usage 
 ## Starting the application
-To run the application on a local server, navigate to the ml_api directory and run the python file `app.py`.
+To run the application on a local server, navigate to the `03_ml_api` directory and run the python file `app.py`.
 Once the script is running, an ip address will be displayed in the terminal (such as http://127.0.0.1:5000). 
 Open a web browser and enter the ip address as a URL
 
