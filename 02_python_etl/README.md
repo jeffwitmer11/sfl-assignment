@@ -1,3 +1,4 @@
+
 # Overview
 This documentation outlines the design, deployment, and functionality of a mock ETL (Extract, Transform, Load) pipeline. The pipeline takes a list of users as input, transforms it into a structured table, and loads it into a MySQL database. The resulting table can be queried for downstream processes, such as sending targeted emails.
 
@@ -5,15 +6,15 @@ This documentation outlines the design, deployment, and functionality of a mock 
 This would be a great way to demonstrate skills with Spark, a platform I am quite familiar with and love using. I, however, opted not to set up a Docker container with Spark and instead called out areas where I could leverage spark if this ETL pipeline was deployed with larger data. 
 
 # Requirements:
-Docker
+Docker (installed and running)
 docker-compose
 
 # Usage
 
-1. Navigate to the etl_pipeline directory
+1. Navigate to the `02_python_etl` directory
 2. Execute the command: `docker-compose up` or `docker-compose up -d`
 Two Docker containers will be initiated:
-   - `db`: The contanier for a MySQL database
+   - `db`: The container for a MySQL database
    - `app`: The container for running a Python script that executes the ETL pipeline.
 > *Note: The Python container will wait for 20 seconds before starting to ensure the database is set up adequately.*
 3. Upon completion of the Python container, records will be written to the MySQL database in the db container. These records constitute a subset of the original input data, along with additional constructed fields.
@@ -36,7 +37,7 @@ The deployment is orchestrated via a `docker-compose.yml` file, which builds a m
 ## Extract
 
 The supplied data is read into a Pandas DataFrame and immediately written in its entirety to the database. This approach facilitates SQL joins with other tables in subsequent stages. 
-This strategy is similar to what would be done with Spark where it is important to extract the smallest possible dataset for performance. Techniques such as broadcast joins can be used to efficiently filter the data can be applied efficiently when using Spark.
+This strategy is similar to what would be done with Spark where it is important to extract the smallest possible dataset for performance. Techniques such as broadcast joins can be used to efficiently filter the data when using Spark.
 
 ## Transform
 
@@ -50,3 +51,4 @@ This strategy is similar to what would be done with Spark where it is important 
 ## Load
 
 The transformed data is loaded into a table in the MySQL database, ready for downstream consumption by other applications.
+
