@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS email_messages;
+
+CREATE TABLE email_messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    email_address TEXT NOT NULL,
+    email_message TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL
+);
+
+DROP TABLE IF EXISTS blocked_domains;
+
+CREATE TABLE blocked_domains (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    domain TEXT NOT NULL
+);
+
+DROP TABLE IF EXISTS blocked_ips;
+
+CREATE TABLE blocked_ips (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    ip_address TEXT NOT NULL
+);
