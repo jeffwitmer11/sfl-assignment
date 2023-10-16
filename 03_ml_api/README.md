@@ -2,7 +2,7 @@
 A chat bot web application with a simple API to retrieve the chat history
 
 ## Disclaimer
-In its current form, the deployment of this ML model is not complete as it lacks a suitable environment (AWS, Azure, GCP, docker, kubernetes, etc). I developed this code using and tested this code using a virtual environment (venv). 
+In its current form, the deployment of this ML model is not complete as it lacks a suitable environment (AWS, Azure, GCP, docker, kubernetes, etc). I developed and tested this code using a virtual environment (venv). 
 
 # Requirements
 Following on from disclaimer above, the environment requires
