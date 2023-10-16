@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS chat_log;
+
+CREATE TABLE chat_log (
+    chat_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    session_id INTEGER NOT NULL,
+    prompt TEXT,
+    response TEXT
+);
